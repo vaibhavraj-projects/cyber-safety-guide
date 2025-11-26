@@ -1,251 +1,121 @@
-/* -------------------------------
-   Home page hero & timeline
-   (Append this to the end of style.css)
-   ------------------------------- */
-
-.home-hero {
-  text-align: center;
-  padding: 36px 20px 10px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+/* Reset & basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.home-welcome {
-  font-family: 'Poppins', sans-serif;
-  color: #0d47a1;
-  font-weight: 500;
-  margin-bottom: 8px;
-  font-size: 1rem;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f7fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
-.home-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3.5rem; /* large hero title */
-  color: #0d47a1;
-  margin: 6px 0;
-  letter-spacing: -0.5px;
-  line-height: 1.02;
+/* Navigation */
+nav {
+    background-color: #1976d2;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.home-punch {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.25rem;
-  color: #1565c0;
-  margin: 8px 0 12px 0;
-  font-weight: 500;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.home-intro {
-  font-family: 'Poppins', sans-serif;
-  max-width: 760px;
-  margin: 0 auto 20px auto;
-  color: #333;
-  font-size: 1rem;
+nav a:hover {
+    color: #ffeb3b;
 }
 
-/* Icon row directly under intro */
-.home-icon-row {
-  margin-top: 18px;
+/* Headings */
+h1 {
+    color: #0d47a1;
+    text-align: center;
+    margin: 30px 0 15px 0;
 }
 
-.home-icon-row i {
-  font-size: 1.6rem;
-  color: #1b98f5;
-  margin: 0 12px;
-  opacity: 0.95;
+h2 {
+    color: #1565c0;
+    margin: 20px 0 10px 0;
 }
 
-/* TIMELINE SECTION */
-.home-timeline-section {
-  padding: 30px 20px 50px 20px;
-  max-width: 1100px;
-  margin: 10px auto 30px auto;
+/* Paragraphs & lists */
+p, li {
+    font-size: 16px;
+    margin: 10px 0;
 }
 
-.home-timeline-heading {
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  color: #0d47a1;
-  margin-bottom: 24px;
-  font-size: 1.25rem;
+ul {
+    list-style-type: disc;
+    margin-left: 40px;
 }
 
-/* Container to hold the line and steps */
-.home-timeline-container {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 30px 10px 10px 10px;
+i {
+    color: #555;
 }
 
-/* The horizontal line behind the cards */
-.home-timeline-line {
-  position: absolute;
-  top: 56px; /* vertically aligned to the card centers */
-  left: 6%;
-  right: 6%;
-  height: 6px;
-  background: linear-gradient(90deg, rgba(27,152,245,0.12), rgba(27,152,245,0.22));
-  border-radius: 6px;
-  z-index: 1;
-}
-
-/* Each step area */
-.home-step {
-  position: relative;
-  width: 32%;
-  z-index: 2; /* sit above the line */
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-/* Card look (slightly glossy with shadow) */
-.home-step-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,250,255,0.98));
-  border-radius: 14px;
-  padding: 18px 14px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(13,71,161,0.08), 0 2px 6px rgba(0,0,0,0.04);
-  min-height: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
-}
-
-/* subtle hover pop */
-.home-step-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 34px rgba(13,71,161,0.10), 0 6px 12px rgba(0,0,0,0.06);
-}
-
-.home-step-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, rgba(27,152,245,0.12), rgba(27,152,245,0.08));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  font-size: 1.4rem;
-  color: #0d47a1;
-}
-
-.home-step-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.05rem;
-  color: #0d47a1;
-  margin-bottom: 6px;
-}
-
-.home-step-text {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  color: #333;
-  line-height: 1.3;
-  padding: 0 6px;
-}
-
-/* small circular dot that sits on the timeline below each card */
-.home-step-dot {
-  position: absolute;
-  top: 92px; /* aligns under the card */
-  width: 14px;
-  height: 14px;
-  background: #fff;
-  border: 4px solid #1b98f5;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(13,71,161,0.12);
-}
-
-/* FOOTER tweaks (style B) */
+/* Footer */
 footer {
-  background-color: #1976d2;
-  color: white;
-  text-align: center;
-  padding: 22px 10px;
-  margin-top: 40px;
-  font-style: italic;
+    background-color: #1976d2;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    font-style: italic;
 }
 
-.footer-quote {
-  font-weight: 600;
-  margin-bottom: 6px;
+/* Details/FAQ */
+details {
+    background-color: #e3f2fd;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.footer-credit {
-  font-size: 0.95rem;
+summary {
+    font-weight: bold;
+    color: #0d47a1;
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .home-timeline-container {
-    gap: 14px;
-    padding: 20px 6px 8px 6px;
-  }
-  .home-timeline-line {
-    left: 8%;
-    right: 8%;
-    top: 62px;
-  }
-  .home-step-card {
-    min-height: 110px;
-    padding: 14px;
-  }
-  .home-step-icon {
-    width: 52px;
-    height: 52px;
-    font-size: 1.1rem;
-  }
+/* Quiz placeholder box */
+.quiz-box {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #bbdefb;
+    border-radius: 10px;
+    text-align: center;
 }
 
-@media (max-width: 680px) {
-  .home-timeline-container {
-    flex-direction: column;
-    align-items: center;
-  }
+button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-  .home-timeline-line {
-    display: none; /* hide horizontal line on small screens */
-  }
+button:hover {
+    background-color: #0d47a1;
+}
 
-  .home-step {
-    width: 86%;
-    margin-bottom: 18px;
-    flex-direction: row;
-    gap: 12px;
-    align-items: center;
-  }
-
-  .home-step-card {
-    flex-direction: row;
-    align-items: center;
-    padding: 12px 14px;
-    min-height: 72px;
-  }
-
-  .home-step-icon {
-    margin-bottom: 0;
-    margin-right: 12px;
-  }
-
-  .home-step-title {
-    font-size: 1rem;
-  }
-
-  .home-step-text {
-    font-size: 0.9rem;
-  }
-
-  .home-step-dot {
-    display: none;
-  }
-
-  .home-title { font-size: 2rem; }
-  .home-punch { font-size: 1rem; }
+/* Responsive */
+@media (max-width: 768px) {
+    nav a {
+        margin: 5px 10px;
+    }
+    h1 {
+        font-size: 24px;
+    }
 }
