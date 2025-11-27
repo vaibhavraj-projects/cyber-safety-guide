@@ -1,26 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Safety Quiz</title>
-
-    <link rel="stylesheet" href="quiz.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Safety Quiz</title>
+  <link rel="stylesheet" href="quiz.css" />
 </head>
 
 <body>
 
-    <div class="quiz-container">
-
-        <!-- CARD -->
-        <div id="quiz-card" class="quiz-card">
-            <!-- Dynamic content inserted by JS -->
+   <!-- NAVIGATION BAR -->
+    <nav class="glass-nav">
+        <div class="nav-left">
+            Hi, Welcome to your Cyber Safety Guide!
         </div>
 
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="threats.html">Threats</a>
+            <a href="help.html">Help</a>
+            <a href="stats.html">Stats</a>
+            <a href="tools.html">Tools</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="faq.html">FAQ's</a>
+        </div>
+    </nav>
+
+  <div class="quiz-container">
+
+    <h1 class="title">🧠 Cyber Safety Awareness Mini-Quiz</h1>
+
+    <!-- Card wrapper -->
+    <div id="card" class="card hidden">
+      <div class="card-inner">
+        
+        <!-- FRONT -->
+        <div class="card-face card-front">
+          <div id="question-text"></div>
+          <div id="options"></div>
+
+          <div class="btn-row">
+            <button id="skipBtn" class="btn skip">Skip</button>
+            <button id="submitBtn" class="btn submit">Submit</button>
+          </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="card-face card-back">
+          <div id="feedback"></div>
+          <button id="nextBtn" class="btn next">Next</button>
+        </div>
+
+      </div>
     </div>
 
-    <script src="quiz.js"></script>
+    <!-- INSTRUCTIONS CARD (FIRST CARD) -->
+    <div id="instructions" class="instructions-card">
+      <h2>Instructions:</h2>
+      <p>Choose the correct option for each question.<br>
+      Each correct answer = 1 point.<br>
+      At the end, total your score and check your “Cyber Awareness Level”.</p>
+      <button id="startBtn" class="btn go">Let's Go!</button>
+    </div>
+
+  </div>
+
+ <!-- FOOTER -->
+    <footer>
+        <p class="footer-quote">"stay safe and keep learning!"</p>
+        <p class="footer-credit">Credit — Vaibhav Raj & Samar Pratap Singh | Class IX | Sunbeam School Babatpur</p>
+    </footer>
 
 </body>
 </html>
