@@ -159,6 +159,26 @@
   margin-bottom: 20px;
 }
 
+/* Center layout for final score card */
+.quiz-card.results {
+  text-align: center;
+  padding: 32px;
+}
+
+/* Center the buttons */
+.quiz-card.results .card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+/* Optional: make score pop slightly bigger */
+.quiz-card.results .score-text {
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
 /* Center the Start Quiz button */
 #start-btn {
   display: inline-block;
