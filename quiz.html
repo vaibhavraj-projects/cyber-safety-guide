@@ -1,78 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Safety Quiz</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cyber Safety Quiz</title>
 
-    <!-- Icons + Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Icons + Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- NAV + GLOBAL STYLE -->
-    <link rel="stylesheet" href="global.css">
+  <!-- Global site CSS (keep this) -->
+  <link rel="stylesheet" href="global.css">
 
-    <!-- QUIZ CSS -->
-    <link rel="stylesheet" href="quiz.css">
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="quiz.css">
 </head>
-
 <body>
 
-<!-- NAV -->
-<nav class="glass-nav">
+  <!-- NAV (same structure used across the site) -->
+  <nav class="glass-nav">
     <div class="nav-left">Cyber Secure</div>
     <div class="nav-right">
-        <a href="index.html">Home</a>
-        <a href="threats.html">Threats</a>
-        <a href="stats.html">Stats</a>
-        <a href="help.html">Help</a>
-        <a href="tools.html">Tools</a>
-        <a href="quiz.html" class="active">Quiz</a>
+      <a href="index.html">Home</a>
+      <a href="threats.html">Threats</a>
+      <a href="stats.html">Stats</a>
+      <a href="help.html">Help</a>
+      <a href="tools.html">Tools</a>
+      <a href="quiz.html" class="active">Quiz</a>
     </div>
-</nav>
+  </nav>
 
-<!-- QUIZ SECTION -->
-<section class="quiz-wrapper">
+  <!-- QUIZ CONTENT -->
+  <main class="quiz-page">
+    <section class="quiz-wrapper" aria-labelledby="quizTitle">
 
-    <h1 class="quiz-title">🧠 Cyber Safety Awareness Mini-Quiz</h1>
+      <h1 id="quizTitle" class="quiz-title">🧠 Cyber Safety Mini Quiz</h1>
 
-    <!-- INSTRUCTIONS CARD -->
-    <div id="instructions-card" class="quiz-card show">
-        <h2>How it works</h2>
-        <p>Choose the correct option for each question.<br>
-           Each correct answer = 1 point.<br>
-           At the end, see your **Cyber Awareness Level**!</p>
-        <button id="startQuiz" class="btn start-btn">Let's Go!</button>
-    </div>
-
-    <!-- QUESTION CARD -->
-    <div id="question-card" class="quiz-card hidden">
-        <h2 id="question-text"></h2>
-
-        <div id="options"></div>
-
-        <div class="btn-row">
-            <button id="skipBtn" class="btn skip-btn">Skip</button>
-            <button id="submitBtn" class="btn submit-btn">Submit</button>
+      <!-- INSTRUCTIONS CARD -->
+      <div id="instructionsCard" class="quiz-card card-visible">
+        <h2>How this works</h2>
+        <p class="muted">
+          Choose the correct option for each question. Each correct answer = 1 point.
+          You can skip any question. At the end you'll see your Cyber Awareness Level.
+        </p>
+        <div class="card-actions">
+          <button id="startBtn" class="quiz-btn primary">Start Quiz</button>
         </div>
-    </div>
+      </div>
 
-    <!-- RESULT CARD -->
-    <div id="result-card" class="quiz-card hidden">
+      <!-- QUESTION CARD -->
+      <div id="questionCard" class="quiz-card card-hidden" aria-live="polite">
+        <div class="question-header">
+          <div id="progress" class="progress-text">Question 1 / 1</div>
+        </div>
+
+        <h2 id="questionText" class="question-text">Question text</h2>
+
+        <div id="optionsList" class="options-list" role="listbox" aria-label="Answer choices"></div>
+
+        <div class="card-actions btn-row">
+          <button id="skipBtn" class="quiz-btn secondary">Skip</button>
+          <button id="submitBtn" class="quiz-btn primary">Submit</button>
+        </div>
+      </div>
+
+      <!-- RESULT CARD -->
+      <div id="resultCard" class="quiz-card card-hidden">
         <h2>Your Score</h2>
-        <p id="scoreText"></p>
-        <p id="scoreMessage"></p>
-        <a href="quiz.html" class="btn restart-btn">Try Again</a>
-    </div>
+        <p id="scoreText" class="score-text">You scored 0 / 0</p>
+        <p id="scoreMessage" class="score-message"></p>
+        <div class="card-actions">
+          <button id="restartBtn" class="quiz-btn primary">Try Again</button>
+          <a href="index.html" class="quiz-btn ghost">Back to Home</a>
+        </div>
+      </div>
 
-</section>
+    </section>
+  </main>
 
- <!-- FOOTER -->
-    <footer>
-        <p class="footer-quote">"stay safe and keep learning!"</p>
-        <p class="footer-credit">Credit — Vaibhav Raj & Samar Pratap Singh | Class IX | Sunbeam School Babatpur</p>
-    </footer>
+  <!-- FOOTER (global.css handles styling) -->
+  <footer>
+    <p class="footer-quote">"stay safe and keep learning!"</p>
+    <p class="footer-credit">Credit — Vaibhav Raj & Samar Pratap Singh | Class IX | Sunbeam School Babatpur</p>
+  </footer>
 
-<script src="quiz.js"></script>
+  <!-- Embedded JS: quiz logic is self-contained and accessible -->
+  <script>
+  (function () {
+    // Quiz data (you can edit/add questions here)
+    const quizData = [
+      { type: "mcq", question: "Which of these is a common sign of a phishing attempt?", options: ["The email asks for urgent action","The sender is your saved contact","The link looks completely normal","The message contains no spelling mistakes"], correct: 0 },
+      { type: "mcq", question: "Which is the strongest password?", options: ["password123","Abc123","H!9vT2$qP7","YourName2024"], correct: 2 },
+      { type: "mcq", question: "Which file is MOST likely to contain malware?", options: ["A PDF from your school website","A game setup from an unknown website","A photo sent by a family member","A document you created yourself"], correct: 1 },
+      { type: "mcq", question: "What should you AVOID on public Wi-Fi?", options: ["Watching YouTube","Checking the weather","Logging into bank accounts","Reading news articles"], correct: 2 },
+      { type: "tf", question: "Cyberbullying only counts if it happens repeatedly.", options: ["True","False"], correct: 1 },
+      { type: "tf", question: "Reusing the same password for different accounts is dangerous.", options: ["True","False"], correct: 0 },
+      { type: "mcq", question: "Which website looks suspicious?", options: ["https://www.bankofindia.com","https://secure-login-boi.com-authverify.net","https://www.rbi.org.in","https://www.digilocker.gov.in"], correct: 1 },
+      { type: "tf", question: "Scanning random QR codes at public places is always safe.", options: ["True","False"], correct: 1 }
+    ];
+
+    // State
+    let index = 0;
+    let score = 0;
+    let selectedIndex = null;
+
+    // Elements
+    const instructionsCard = document.getElementById('instructionsCard');
+    const questionCard = document.getElementById('questionCard');
+    const resultCard = document.getElementById('resultCard');
+    const startBtn = document.getElementById('startBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const skipBtn = document.getElementById('skipBtn');
+    const restartBtn = document.getElementById('restartBtn');
+    const questionText = document.getElementById('questionText');
+    const optionsList = document.getElementById('optionsList');
+    const progressText = document.getElementById('progress');
+    const scoreText = document.getElementById('scoreText');
+    const scoreMessage = document.getElementById('scoreMessage');
+
+    // Helpers to show/hide
+    function show(el){ el.classList.remove('card-hidden'); el.classList.add('card-visible'); }
+    function hide(el){ el.classList.remove('card-visible'); el.classList.add('card-hidden'); }
+
+    // Start
+    startBtn.addEventListener('click', () => {
+      index = 0; score = 0; selectedIndex = null;
+      hide(instructionsCard);
+      show(questionCard);
+      renderQuestion();
+    });
+
+    // Render question
+    function renderQuestion() {
+      selectedIndex = null;
+      const q = quizData[index];
+      progressText.textContent = `Question ${index + 1} / ${quizData.length}`;
+      questionText.textContent = q.question;
+      optionsList.innerHTML = '';
+
+      q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.type = 'button';
+        btn.setAttribute('role', 'option');
+        btn.setAttribute('aria-selected', 'false');
+        btn.textContent = opt;
+        btn.addEventListener('click', () => {
+          // clear previous selection
+          [...optionsList.children].forEach(ch => {
+            ch.classList.remove('selected');
+            ch.setAttribute('aria-selected','false');
+          });
+          btn.classList.add('selected');
+          btn.setAttribute('aria-selected','true');
+          selectedIndex = i;
+        });
+        optionsList.appendChild(btn);
+      });
+    }
+
+    // Submit logic
+    submitBtn.addEventListener('click', () => {
+      if (selectedIndex === null) {
+        // no answer selected -> treat as skip (or prompt)
+        // We'll prompt user gently
+        if (!confirm('No answer selected. Do you want to skip this question?')) return;
+        nextQuestion();
+        return;
+      }
+
+      if (selectedIndex === quizData[index].correct) score++;
+      nextQuestion();
+    });
+
+    // Skip
+    skipBtn.addEventListener('click', nextQuestion);
+
+    // Next question handler
+    function nextQuestion() {
+      index++;
+      if (index >= quizData.length) {
+        showResults();
+        return;
+      }
+      renderQuestion();
+    }
+
+    // Show results
+    function showResults() {
+      hide(questionCard);
+      show(resultCard);
+      scoreText.textContent = `You scored ${score} / ${quizData.length}`;
+
+      let message = '';
+      if (score <= 3) message = '⚠️ Needs Improvement — Stay alert!';
+      else if (score <= 6) message = '👍 Good Job — You\'re learning!';
+      else message = '🌟 Excellent — You\'re cyber smart!';
+
+      scoreMessage.textContent = message;
+    }
+
+    // Restart
+    restartBtn.addEventListener('click', () => {
+      hide(resultCard);
+      show(instructionsCard);
+    });
+
+    // Accessibility: Allow Enter to submit when an option is focused
+    optionsList.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const focused = document.activeElement;
+        if (focused && focused.classList.contains('option-btn')) {
+          focused.click();
+        }
+      }
+    });
+  })();
+  </script>
+
 </body>
 </html>
