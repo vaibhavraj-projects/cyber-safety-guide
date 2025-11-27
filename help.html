@@ -1,35 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Cyber Safety - Help</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Secure - Help & Reporting</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="global.css">
+  <!-- Page-specific styles (if needed) -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="threats.html">Threats</a>
-        <a href="help.html">Help</a>
-        <a href="stats.html">Stats</a>
-        <a href="tools.html">Tools</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="faq.html">FAQ</a>
-    </nav>
 
-    <h1>Help & Reporting</h1>
-    <p>If you face a cyber threat, here’s what to do:</p>
-    <ul>
-        <li><b>Report to Police:</b> Local cybercrime cell or <a href="https://cybercrime.gov.in/" target="_blank">cybercrime.gov.in</a></li>
-        <li><b>Bank Fraud:</b> Contact your bank immediately and block accounts/cards.</li>
-        <li><b>Helplines:</b> 155260 (National Cyber Crime Reporting Portal)</li>
-        <li><b>Email Reports:</b> <a href="mailto:helpdesk@cybercrime.gov.in">helpdesk@cybercrime.gov.in</a></li>
-        <li><b>Social Media Abuse:</b> Report via platform’s official report button</li>
-    </ul>
+  <!-- NAVIGATION BAR -->
+  <nav class="glass-nav">
+    <div class="nav-left">Hi, Welcome to your Cyber Safety Guide!</div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="threats.html">Threats</a>
+      <a href="help.html" class="active">Help</a>
+      <a href="stats.html">Stats</a>
+      <a href="tools.html">Tools</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="faq.html">FAQ's</a>
+    </div>
+  </nav>
 
-    <footer>
-        "Stay alert, stay safe!" <br>
-        Credits: Your Brother’s Name, Class X
-    </footer>
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <h1>Need Help? Here’s What You Can Do</h1>
+    <p class="page-subtext">Official reporting portals, hotlines, and steps to stay safe if something goes wrong online.</p>
+  </header>
+
+  <section class="content-container">
+
+    <!-- HELP BLOCK 1 -->
+    <div class="info-block">
+      <h2><i class="fa-solid fa-globe"></i> Report Cybercrime Online</h2>
+      <p>
+        Use the official portal of the government — <a href="https://cybercrime.gov.in" target="_blank" rel="noopener">cybercrime.gov.in</a> — to file complaints for cyber fraud, hacking, phishing or other digital offences. The portal accepts complaints from across India. :contentReference[oaicite:4]{index=4}
+      </p>
+      <p class="prevention"><span class="info-icon">ℹ</span>Keep screenshots and transaction IDs ready before submitting — it helps track the case faster.</p>
+    </div>
+
+    <!-- HELP BLOCK 2 -->
+    <div class="info-block">
+      <h2><i class="fa-solid fa-phone"></i> National Helpline Number</h2>
+      <p>
+        For immediate assistance or to report financial cyber-fraud, dial the national cybercrime helpline <strong>1930</strong> (toll-free). This connects you to the official Indian Cyber Crime Coordination Centre (I4C) helpline. :contentReference[oaicite:6]{index=6}
+      </p>
+      <p class="prevention"><span class="info-icon">ℹ</span>Call 1930 urgently if you suspect your bank or wallet account has been compromised.</p>
+    </div>
+
+    <!-- HELP BLOCK 3 -->
+    <div class="info-block">
+      <h2><i class="fa-solid fa-lock"></i> Data Breach / Hacking Assistance</h2>
+      <p>
+        If your personal info (passwords, email, phone) is leaked or your account is hacked — report immediately on the portal or contact local cyber-crime cell. Prompt reporting increases chance of retrieving stolen data.
+      </p>
+      <p class="prevention"><span class="info-icon">ℹ</span>Change all passwords, enable two-factor authentication, and save any suspicious messages/screenshots before filing complaint.</p>
+    </div>
+
+    <!-- HELP BLOCK 4 -->
+    <div class="info-block">
+      <h2><i class="fa-solid fa-university"></i> Banking / Wallet Fraud Recovery</h2>
+      <p>
+        For financial fraud (UPI scams, fake transactions, wallet hacks) — call 1930 immediately. Authorities coordinate with banks and payment platforms to freeze suspicious transactions and attempt fund recovery. :contentReference[oaicite:7]{index=7}
+      </p>
+      <p class="prevention"><span class="info-icon">ℹ</span>Don’t wait — report within first few hours. Keep transaction details, receipts, screenshots ready.</p>
+    </div>
+
+    <!-- HELP BLOCK 5 -->
+    <div class="info-block">
+      <h2><i class="fa-solid fa-gavel"></i> Legal Complaint / FIR Process</h2>
+      <p>
+        If online abuse, threats, fraud or identity theft happens — you can file a legal complaint at your local cyber-police station or lodge complaint via the portal.  
+        For major fraud (large amounts), many state police now accept **e-FIRs** for cybercrime complaints. :contentReference[oaicite:8]{index=8}
+      </p>
+      <p class="prevention"><span class="info-icon">ℹ</span>Collect all proof (screenshots, chats, transaction IDs) and save acknowledgment from portal/helpline — it helps when filing FIR.</p>
+    </div>
+
+    <!-- HELP BLOCK 6 -->
+    <div class="info-block">
+      <h2><i class="fa-solid fa-phone-volume"></i> Local / State Cyber-Cell Contacts</h2>
+      <p>
+        Many states maintain dedicated cyber-crime cells under police departments.  
+        For example, if you are in Uttar Pradesh — contact the cyber cell listed at your district police HQ. :contentReference[oaicite:9]{index=9}  
+        For &lt;state-specific details&gt;, search “[Your State] cyber cell contact number” on Google or visit state police website.
+      </p>
+      <p class="prevention"><span class="info-icon">ℹ</span>Always note the date, time, complaint number when contacting local police or cyber cell for tracking later.</p>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-quote">"Stay alert, stay safe — report the scam."</p>
+    <p class="footer-credit">Credit — Vaibhav Raj | Class IX | Sunbeam School Babatpur</p>
+  </footer>
+
 </body>
 </html>
