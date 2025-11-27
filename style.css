@@ -65,13 +65,13 @@ body {
 
 .home-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.2rem;
+    font-size: 5rem;
     color: #0d47a1;
-    letter-spacing: -1px;
+    letter-spacing: 1px;
 }
 
 .home-punch {
-    font-size: 1.2rem;
+    font-size: 0.75rem;
     color: #1565c0;
     margin-top: 8px;
     font-weight: 500;
