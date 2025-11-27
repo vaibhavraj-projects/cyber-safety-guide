@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #e8f0ff;
+    font-family: "Poppins", sans-serif;
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.quiz-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    min-height: 280px;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.quiz-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Headings */
+.quiz-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0d47a1;
+    margin-bottom: 12px;
+}
+
+/* Options */
+.option-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 12px;
+    background: #f3f7ff;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.option-btn:hover {
+    background: #e0ecff;
+}
+
+/* Footer buttons */
+.card-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    background: #0d47a1;
+    color: white;
+}
+
+.action-btn:hover {
+    background: #0b3c8c;
+}
+
+/* Final Score */
+.score-box {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 20px;
+}
