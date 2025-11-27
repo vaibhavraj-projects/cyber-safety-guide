@@ -26,3 +26,58 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
 }
+
+/* ------------------------------------------------
+   NAVIGATION BAR (Blue Frosted Glass)
+--------------------------------------------------*/
+.glass-nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 32px;
+    backdrop-filter: blur(14px);
+    background: rgba(150, 190, 245, 0.25);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 18px rgba(0, 70, 140, 0.12);
+    z-index: 100;
+}
+
+.nav-left {
+    font-weight: 500;
+    color: #0d47a1;
+    font-size: 0.97rem;
+}
+
+.nav-right a {
+    color: #0d47a1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.nav-right a:hover {
+    color: #1565c0;
+}
+
+/* ------------------------------------------------
+   FOOTER
+--------------------------------------------------*/
+footer {
+    background: #1565c0;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 40px;
+}
+
+.footer-quote {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.footer-credit {
+    font-size: 0.95rem;
+}
