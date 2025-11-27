@@ -351,7 +351,7 @@ footer {
   text-decoration: underline;
 }
 
-_prevention { /* same as earlier, ensure prevention and info-icon styles already exist */ }
+.prevention { /* same as earlier, ensure prevention and info-icon styles already exist */ }
 
 /* STATS PAGE GRID */
 
@@ -457,7 +457,6 @@ _prevention { /* same as earlier, ensure prevention and info-icon styles already
     margin-bottom: 25px;
 }
 
-/* Fix for stretched subtext */
 .page-header .page-subtext {
     max-width: 750px;
     margin: 0 auto;
