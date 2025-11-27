@@ -1,187 +1,167 @@
-const questions = [
-  {
-    type: "MCQ",
-    q: "Which message is MOST likely a phishing attempt?",
-    options: [
-      "Your bank contacts you through the official app",
-      "An email saying you won a prize + asks to click a strange link",
-      "Your teacher sends homework on the school platform"
-    ],
-    answer: 1
-  },
-  {
-    type: "MCQ",
-    q: "Which is a strong password?",
-    options: [
-      "123456",
-      "mypassword",
-      "Frog!72Sky*9"
-    ],
-    answer: 2
-  },
-  {
-    type: "MCQ",
-    q: "What can malware do?",
-    options: [
-      "Protect your device",
-      "Slow devices and steal data",
-      "Make internet faster"
-    ],
-    answer: 1
-  },
-  {
-    type: "MCQ",
-    q: "What should you NOT do on public Wi-Fi?",
-    options: [
-      "Watch videos",
-      "Do online school work",
-      "Log in to bank / enter personal details"
-    ],
-    answer: 2
-  },
-  {
-    type: "TF",
-    q: "Cyberbullying is never okay.",
-    options: ["True", "False"],
-    answer: 0
-  },
-  {
-    type: "TF",
-    q: "Reusing the same password everywhere is safe.",
-    options: ["True", "False"],
-    answer: 1
-  },
-  {
-    type: "MCQ",
-    q: "Which website is safest?",
-    options: [
-      "http://freestuff.com",
-      "https://school.edu",
-      "A site with misspelled URL"
-    ],
-    answer: 1
-  },
-  {
-    type: "TF",
-    q: "Scanning unknown QR codes is always safe.",
-    options: ["True", "False"],
-    answer: 1
-  }
+/* -------------------------------
+        QUIZ DATA
+--------------------------------*/
+const quizData = [
+    {
+        type: "mcq",
+        question: "Which of these is a common sign of a phishing attempt?",
+        options: [
+            "The email asks for urgent action",
+            "The sender is your saved contact",
+            "The link looks completely normal",
+            "The message contains no spelling mistakes"
+        ],
+        correct: 0
+    },
+
+    {
+        type: "mcq",
+        question: "Which is the strongest password?",
+        options: [
+            "password123",
+            "Abc123",
+            "H!9vT2$qP7",
+            "YourName2024"
+        ],
+        correct: 2
+    },
+
+    {
+        type: "mcq",
+        question: "Which file is MOST likely to contain malware?",
+        options: [
+            "A PDF from your school website",
+            "A game setup from an unknown website",
+            "A photo sent by a family member",
+            "A document you created yourself"
+        ],
+        correct: 1
+    },
+
+    {
+        type: "mcq",
+        question: "What should you AVOID on public Wi-Fi?",
+        options: [
+            "Watching YouTube",
+            "Checking the weather",
+            "Logging into bank accounts",
+            "Reading news articles"
+        ],
+        correct: 2
+    },
+
+    {
+        type: "tf",
+        question: "Cyberbullying only counts if it happens repeatedly.",
+        options: ["True", "False"],
+        correct: 1
+    },
+
+    {
+        type: "tf",
+        question: "Reusing the same password for different accounts is dangerous.",
+        options: ["True", "False"],
+        correct: 0
+    },
+
+    {
+        type: "mcq",
+        question: "Which website looks suspicious?",
+        options: [
+            "https://www.bankofindia.com",
+            "https://secure-login-boi.com-authverify.net",
+            "https://www.rbi.org.in",
+            "https://www.digilocker.gov.in"
+        ],
+        correct: 1
+    },
+
+    {
+        type: "tf",
+        question: "Scanning random QR codes at public places is always safe.",
+        options: ["True", "False"],
+        correct: 1
+    }
 ];
 
+let index = 0;
 let score = 0;
-let current = 0;
 
-const card = document.getElementById("card");
-const instructions = document.getElementById("instructions");
-
+/* HTML ELEMENTS */
+const instructions = document.getElementById("instructions-card");
+const questionCard = document.getElementById("question-card");
+const resultCard = document.getElementById("result-card");
 const questionText = document.getElementById("question-text");
-const optionsDiv = document.getElementById("options");
-const feedback = document.getElementById("feedback");
+const optionsBox = document.getElementById("options");
 
-document.getElementById("startBtn").onclick = () => {
-  instructions.style.display = "none";
-  card.classList.remove("hidden");
-  loadQuestion();
-};
-
-function loadQuestion() {
-  card.classList.remove("flip");
-  const q = questions[current];
-
-  questionText.textContent = q.q;
-  optionsDiv.innerHTML = "";
-
-  q.options.forEach((opt, idx) => {
-    const btn = document.createElement("button");
-    btn.textContent = opt;
-    btn.onclick = () => checkAnswer(idx);
-    optionsDiv.appendChild(btn);
-  });
-}
-
-function checkAnswer(choice) {
-  const q = questions[current];
-  feedback.textContent = choice === q.answer ? "Correct! 🎉" : "Oops! ❌";
-  if (choice === q.answer) score++;
-
-  card.classList.add("flip");
-}
-
-document.getElementById("skipBtn").onclick = () => {
-  next();
-};
-
-document.getElementById("submitBtn").onclick = () => {
-  // Do nothing—buttons handled by option click
-};
-
-document.getElementById("nextBtn").onclick = next;
-
-function next() {
-  current++;
-  if (current >= questions.length) {
-    endQuiz();
-  } else {
+/* START QUIZ */
+document.getElementById("startQuiz").addEventListener("click", () => {
+    instructions.classList.add("hidden");
+    questionCard.classList.remove("hidden");
+    questionCard.classList.add("show");
     loadQuestion();
-  }
+});
+
+/* LOAD QUESTION */
+function loadQuestion() {
+    const q = quizData[index];
+    questionText.textContent = q.question;
+
+    optionsBox.innerHTML = "";
+
+    q.options.forEach((opt, i) => {
+        const div = document.createElement("div");
+        div.classList.add("option");
+        div.textContent = opt;
+
+        div.onclick = () => {
+            document.querySelectorAll(".option").forEach(o => o.style.background = "#e7f0ff");
+            div.style.background = "#c3d8ff";
+            div.dataset.selected = i;
+        };
+
+        optionsBox.appendChild(div);
+    });
 }
 
-function endQuiz() {
-  card.classList.add("flip");
-  feedback.innerHTML = `You scored <b>${score}/${questions.length}</b> 🎉<br><br>
-    Cyber Awareness Level:<br>
-    ${score >= 7 ? "🟢 Cyber Star!" :
-      score >= 4 ? "🟡 Getting There!" :
-                   "🔴 Needs Practice!"}`;
-  document.getElementById("nextBtn").style.display = "none";
+/* SUBMIT */
+document.getElementById("submitBtn").addEventListener("click", () => {
+    let selected = [...document.querySelectorAll(".option")].find(o => o.dataset.selected !== undefined);
+
+    if (selected) {
+        if (parseInt(selected.dataset.selected) === quizData[index].correct) {
+            score++;
+        }
+    }
+
+    nextQuestion();
+});
+
+/* SKIP */
+document.getElementById("skipBtn").addEventListener("click", nextQuestion);
+
+function nextQuestion() {
+    index++;
+    if (index >= quizData.length) {
+        showResults();
+        return;
+    }
+    loadQuestion();
 }
 
-<script>
-/* Fail-safe starter: makes the "Let's Go!" button work */
-(function(){
-  function startHandler(){
-    // hide instructions card (if present)
-    const instr = document.getElementById('instructions') || document.querySelector('.instructions-card');
-    if(instr) instr.style.display = 'none';
+/* SHOW RESULTS */
+function showResults() {
+    questionCard.classList.add("hidden");
+    resultCard.classList.remove("hidden");
+    resultCard.classList.add("show");
 
-    // reveal quiz card (if present)
-    const quizCard = document.getElementById('card') || document.querySelector('.card');
-    if(quizCard) quizCard.classList.remove('hidden');
+    document.getElementById("scoreText").textContent = `You scored ${score} / ${quizData.length}`;
 
-    // call common initializer functions if they exist (covers multiple implementations)
-    if(typeof loadQuestion === 'function') {
-      try { loadQuestion(); } catch(e){ console.warn('loadQuestion error:', e); }
-    }
-    if(typeof renderDeck === 'function') {
-      try { renderDeck(); } catch(e){ console.warn('renderDeck error:', e); }
-    }
-    if(typeof renderDeck === 'undefined' && typeof initQuiz === 'function') {
-      try { initQuiz(); } catch(e){ console.warn('initQuiz error:', e); }
-    }
-  }
+    let message = "";
 
-  // attach after DOM ready
-  function attachStart(){
-    const btn = document.getElementById('startBtn') || document.querySelector('#startBtn, .go, .start-btn');
-    if(btn){
-      btn.addEventListener('click', startHandler);
-      return;
-    }
-    // if button not yet in DOM, try again shortly
-    const retry = setInterval(()=>{
-      const b = document.getElementById('startBtn') || document.querySelector('#startBtn, .go, .start-btn');
-      if(b){
-        clearInterval(retry);
-        b.addEventListener('click', startHandler);
-      }
-    }, 150);
-  }
+    if (score <= 3) message = "⚠️ Needs Improvement — Stay alert!";
+    else if (score <= 6) message = "👍 Good Job — You're learning!";
+    else message = "🌟 Excellent — You're cyber smart!";
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', attachStart);
-  } else {
-    attachStart();
-  }
-})();
-</script>
+    document.getElementById("scoreMessage").textContent = message;
+}
