@@ -162,3 +162,84 @@ footer {
 .footer-credit {
     font-size: 0.95rem;
 }
+/* -------------------------------------------
+   ABOUT PAGE STYLING
+-------------------------------------------*/
+
+.about-header {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.about-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2rem;
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+.about-sub {
+    color: #0a367a;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Q&A BOXES */
+.qa-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.qa-item {
+    background: white;
+    padding: 22px 25px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 14px rgba(0, 60, 140, 0.12);
+}
+
+.qa-item h2 {
+    color: #0d47a1;
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.qa-item p {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* WEBTIONARY */
+.webtionary {
+    max-width: 900px;
+    margin: 50px auto 60px;
+    padding: 0 20px;
+}
+
+.webtionary-title {
+    text-align: center;
+    color: #0d47a1;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+}
+
+.webtionary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.webtionary li {
+    background: white;
+    padding: 15px 18px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 10px rgba(0, 60, 140, 0.1);
+    color: #333;
+}
+
+.webtionary li strong {
+    color: #0a367a;
+}
