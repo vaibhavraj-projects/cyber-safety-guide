@@ -149,3 +149,18 @@
   .question-text { font-size: 1.05rem; }
   .quiz-title { font-size: 1.4rem; }
 }
+
+/* Intro card specific styling */
+.quiz-card.intro {
+  text-align: center;
+}
+
+.quiz-card.intro p {
+  margin-bottom: 20px;
+}
+
+/* Center the Start Quiz button */
+#start-btn {
+  display: inline-block;
+  margin: 12px auto 0 auto;
+}
