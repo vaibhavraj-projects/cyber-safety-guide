@@ -456,3 +456,10 @@ _prevention { /* same as earlier, ensure prevention and info-icon styles already
     margin-top: 10px;
     margin-bottom: 25px;
 }
+
+/* Fix for stretched subtext */
+.page-header .page-subtext {
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
