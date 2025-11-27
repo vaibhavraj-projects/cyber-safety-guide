@@ -136,3 +136,52 @@ function endQuiz() {
                    "🔴 Needs Practice!"}`;
   document.getElementById("nextBtn").style.display = "none";
 }
+
+<script>
+/* Fail-safe starter: makes the "Let's Go!" button work */
+(function(){
+  function startHandler(){
+    // hide instructions card (if present)
+    const instr = document.getElementById('instructions') || document.querySelector('.instructions-card');
+    if(instr) instr.style.display = 'none';
+
+    // reveal quiz card (if present)
+    const quizCard = document.getElementById('card') || document.querySelector('.card');
+    if(quizCard) quizCard.classList.remove('hidden');
+
+    // call common initializer functions if they exist (covers multiple implementations)
+    if(typeof loadQuestion === 'function') {
+      try { loadQuestion(); } catch(e){ console.warn('loadQuestion error:', e); }
+    }
+    if(typeof renderDeck === 'function') {
+      try { renderDeck(); } catch(e){ console.warn('renderDeck error:', e); }
+    }
+    if(typeof renderDeck === 'undefined' && typeof initQuiz === 'function') {
+      try { initQuiz(); } catch(e){ console.warn('initQuiz error:', e); }
+    }
+  }
+
+  // attach after DOM ready
+  function attachStart(){
+    const btn = document.getElementById('startBtn') || document.querySelector('#startBtn, .go, .start-btn');
+    if(btn){
+      btn.addEventListener('click', startHandler);
+      return;
+    }
+    // if button not yet in DOM, try again shortly
+    const retry = setInterval(()=>{
+      const b = document.getElementById('startBtn') || document.querySelector('#startBtn, .go, .start-btn');
+      if(b){
+        clearInterval(retry);
+        b.addEventListener('click', startHandler);
+      }
+    }, 150);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachStart);
+  } else {
+    attachStart();
+  }
+})();
+</script>
