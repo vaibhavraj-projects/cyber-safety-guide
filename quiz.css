@@ -1,30 +1,93 @@
-/* Background matches your existing gradient vibe */
+/* ------------------------------------------------
+   GLOBAL RESET + FONTS + BACKGROUND
+--------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-/* Smooth bright blue gradient */
+    font-family: 'Poppins', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.6;
+
+    /* SAME GRADIENT AS HOME PAGE */
     background: linear-gradient(
         135deg,
         #eaf3ff 0%,
         #c7dbff 35%,
         #a7c4ff 70%,
-        #d7e7ff 100%);
+        #d7e7ff 100%
+    );
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Nav + Footer */
-.navbar, .footer {
-  text-align: center;
-  padding: 15px;
-  background: rgba(0,0,0,0.3);
-  backdrop-filter: blur(6px);
-  color: #fff;
+/* Secondary heading font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
 }
 
-/* CENTER QUIZ CONTENT */
+/* ------------------------------------------------
+   NAVIGATION BAR (Blue Frosted Glass)
+--------------------------------------------------*/
+.glass-nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 32px;
+    backdrop-filter: blur(14px);
+    background: rgba(150, 190, 245, 0.25);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 18px rgba(0, 70, 140, 0.12);
+    z-index: 100;
+}
+
+.nav-left {
+    font-weight: 500;
+    color: #0d47a1;
+    font-size: 0.97rem;
+}
+
+.nav-right a {
+    color: #0d47a1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.nav-right a:hover {
+    color: #1565c0;
+}
+
+/* ------------------------------------------------
+   FOOTER
+--------------------------------------------------*/
+footer {
+    background: #1565c0;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 40px;
+}
+
+.footer-quote {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.footer-credit {
+    font-size: 0.95rem;
+}
+
+/* ------------------------------------------------
+   QUIZ LAYOUT
+--------------------------------------------------*/
 .quiz-container {
   flex: 1;
   display: flex;
@@ -35,26 +98,38 @@ body {
 
 /* Title */
 .title {
-  margin-top: 20px;
+  margin-top: 25px;
   text-align: center;
   font-size: 2rem;
+  color: #0d47a1;
 }
 
-/* Instructions Card */
+/* ------------------------------------------------
+   INSTRUCTIONS CARD
+--------------------------------------------------*/
 .instructions-card {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.45);
   padding: 25px;
   border-radius: 20px;
-  max-width: 350px;
+  max-width: 360px;
   text-align: center;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  color: #0d47a1;
+  margin-top: 20px;
 }
 
-/* QUIZ CARD */
+.instructions-card h2 {
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+/* ------------------------------------------------
+   QUIZ CARD
+--------------------------------------------------*/
 .card {
-  width: 330px;
-  height: 300px;
+  width: 340px;
+  height: 320px;
   margin-top: 20px;
   perspective: 1000px;
 }
@@ -75,14 +150,15 @@ body {
   backface-visibility: hidden;
   width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.35);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  color: #0d47a1;
 }
 
-/* BACK FACE */
+/* BACK SIDE */
 .card-back {
   transform: rotateY(180deg);
 }
@@ -92,7 +168,9 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Buttons */
+/* ------------------------------------------------
+   BUTTONS
+--------------------------------------------------*/
 .btn {
   margin: 10px;
   padding: 10px 18px;
@@ -101,26 +179,43 @@ body {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
+  transition: 0.25s ease;
+  color: #fff;
 }
 
-.submit { background: #00d4ff; }
-.skip   { background: #ff6f6f; }
-.next   { background: #4cff88; }
-.go     { background: #ffdd55; }
+.submit { background: #2196f3; }
+.skip   { background: #ff5252; }
+.next   { background: #43a047; }
+.go     { background: #ffca28; color: #000; }
 
 .btn:hover {
   opacity: 0.85;
 }
 
-/* Options text */
+/* ------------------------------------------------
+   OPTIONS
+--------------------------------------------------*/
 #options button {
   width: 100%;
-  margin: 5px 0;
+  margin: 6px 0;
   padding: 10px;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.55);
   border: none;
   border-radius: 14px;
-  color: #fff;
+  color: #0d47a1;
   font-size: 1rem;
   cursor: pointer;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+  transition: 0.25s ease;
+}
+
+#options button:hover {
+  background: rgba(255,255,255,0.8);
+}
+
+/* Align submit + skip in one line */
+.btn-row {
+  display: flex;
+  justify-content: space-between;
 }
