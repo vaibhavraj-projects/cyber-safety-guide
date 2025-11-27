@@ -1,34 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Cyber Safety - Tools</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Secure - Tools</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Global + Local CSS -->
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
+
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="threats.html">Threats</a>
-        <a href="help.html">Help</a>
-        <a href="stats.html">Stats</a>
-        <a href="tools.html">Tools</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="faq.html">FAQ</a>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="glass-nav">
+        <div class="nav-left">Hi, Welcome to your Cyber Safety Guide!</div>
+
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="threats.html">Threats</a>
+            <a href="help.html">Help</a>
+            <a href="stats.html">Stats</a>
+            <a href="tools.html" class="active">Tools</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="faq.html">FAQ's</a>
+        </div>
     </nav>
 
-    <h1>Preventative Tools</h1>
-    <ul>
-        <li><b>Strong Passwords:</b> Use long, unique passwords.</li>
-        <li><b>Two-Factor Authentication (2FA):</b> Adds extra security layer.</li>
-        <li><b>Anti-virus:</b> Keep devices protected from malware.</li>
-        <li><b>Spam Blockers:</b> Avoid phishing and malicious emails.</li>
-        <li><b>Safe Browsing:</b> Use secure browsers, VPNs, and HTTPS sites.</li>
-    </ul>
+    <!-- HEADER -->
+    <header class="page-header">
+        <h1>Essential Cyber Safety Tools</h1>
+        <p class="page-subtext">
+            Staying safe online isn’t just about what you know — it’s also about what you use.  
+            These simple tools help protect your accounts, devices, and personal information while you explore the internet with confidence.
+        </p>
+    </header>
 
+    <!-- SECTION HEADING -->
+    <h2 class="section-title">Your Digital Toolkit for Safer Browsing</h2>
+
+    <!-- 2×3 GRID -->
+    <section class="tools-grid">
+
+        <!-- Antivirus -->
+        <div class="tool-card">
+            <i class="fa-solid fa-shield-virus tool-icon"></i>
+            <h3>Antivirus Software</h3>
+            <p>Protects your device from viruses, malware, and harmful files.</p>
+            <p class="tool-examples"><strong>Examples:</strong> Windows Defender, Avast, Quick Heal</p>
+        </div>
+
+        <!-- 2FA -->
+        <div class="tool-card">
+            <i class="fa-solid fa-lock tool-icon"></i>
+            <h3>Two-Factor Authentication (2FA)</h3>
+            <p>Adds a second verification step—like an OTP—to keep accounts secure.</p>
+            <p class="tool-examples"><strong>Examples:</strong> Google Authenticator, Authy, SMS OTP</p>
+        </div>
+
+        <!-- Browsers -->
+        <div class="tool-card">
+            <i class="fa-solid fa-globe tool-icon"></i>
+            <h3>Verified Browsing Apps</h3>
+            <p>Warns you about unsafe websites and blocks risky downloads.</p>
+            <p class="tool-examples"><strong>Examples:</strong> Chrome Safe Browsing, Firefox, Edge</p>
+        </div>
+
+        <!-- Password Generator -->
+        <div class="tool-card">
+            <i class="fa-solid fa-key tool-icon"></i>
+            <h3>Strong Password Generator</h3>
+            <p>Creates long, unique passwords that are almost impossible to guess.</p>
+            <p class="tool-examples"><strong>Examples:</strong> Chrome Generator, LastPass, 1Password</p>
+        </div>
+
+        <!-- Spam Blocker -->
+        <div class="tool-card">
+            <i class="fa-solid fa-ban tool-icon"></i>
+            <h3>Spam & Scam Blockers</h3>
+            <p>Filters fake emails, scam messages, and suspicious links.</p>
+            <p class="tool-examples"><strong>Examples:</strong> Gmail Filter, Truecaller, Outlook Junk Filter</p>
+        </div>
+
+        <!-- Safe Payment -->
+        <div class="tool-card">
+            <i class="fa-solid fa-credit-card tool-icon"></i>
+            <h3>Safe Payment Tools</h3>
+            <p>Keeps your online transactions secure and protected.</p>
+            <p class="tool-examples"><strong>Examples:</strong> UPI with PIN, Razorpay, Paytm</p>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        "Stay alert, stay safe!" <br>
-        Credits: Your Brother’s Name, Class X
+        <p class="footer-quote">"stay safe and keep learning!"</p>
+        <p class="footer-credit">Credit — Vaibhav Raj & Samar Pratap Singh | Class IX | Sunbeam School Babatpur</p>
     </footer>
+
 </body>
 </html>
