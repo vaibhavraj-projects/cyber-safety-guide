@@ -244,132 +244,63 @@ footer {
     color: #0a367a;
 }
 
-/* -------------------------
-   THREATS BACKGROUND
--------------------------- */
-body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #d7e6ff, #e9f0ff, #d3e3ff);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #0a367a;
-}
+/* -------------------------------------------
+   THREATS PAGE
+-------------------------------------------*/
 
-/* -------------------------
-   NAVBAR
--------------------------- */
-.navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 40px;
-    backdrop-filter: blur(14px);
-    background: rgba(255, 255, 255, 0.28);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    position: sticky;
-    top: 0;
-    z-index: 20;
-}
-
-.nav-left {
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 28px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #0a367a;
-    font-weight: 600;
-}
-
-.nav-links a.active {
-    border-bottom: 2px solid #0a367a;
-}
-
-/* -------------------------
-   PAGE HEADER
--------------------------- */
-
-.page-header {
+.threats-header {
     text-align: center;
-    margin-top: 60px;
+    padding: 60px 20px 20px;
 }
 
-.page-header h1 {
-    font-size: 3.4rem;
-    font-weight: 700;
-}
-
-.page-subtext {
-    font-size: 1.3rem;
-    margin-top: 6px;
-    font-weight: 500;
-}
-
-/* -------------------------
-   THREATS CONTENT
--------------------------- */
-
-.content-container {
-    width: 80%;
-    margin: 60px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.threat-card {
-    background: rgba(255, 255, 255, 0.55);
-    padding: 25px 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 40, 120, 0.15);
-    backdrop-filter: blur(10px);
-}
-
-.threat-card h2 {
-    font-size: 1.9rem;
+.threats-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #0d47a1;
     margin-bottom: 10px;
 }
 
-/* Prevention Line */
-.prevention {
-    color: #00c853;
-    font-weight: 600;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.threats-sub {
+    color: #0a367a;
+    font-size: 1.1rem;
 }
 
-.info-icon {
-    color: #00c853;
-    font-size: 1rem;
-    border: 2px solid #00c853;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-weight: 700;
+.threats-container {
+    max-width: 900px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
 }
 
-/* -------------------------
-   FOOTER
--------------------------- */
-.footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 60px;
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(10px);
+.threat-card {
+    background: white;
+    padding: 22px 25px;
+    border-radius: 16px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 14px rgba(0, 60, 140, 0.12);
 }
 
-.footer small {
+.threat-card h2 {
+    color: #0d47a1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.threat-card h2 i {
+    color: #1976d2;
+    margin-right: 8px;
+}
+
+.threat-card p {
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.avoid {
+    font-size: 0.95rem;
+    color: #0a367a;
+}
+
     font-size: 0.9rem;
     font-weight: 600;
 }
