@@ -101,13 +101,20 @@ footer {
 
 /* QUIZ CARDS */
 .quiz-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: #0a2a5e; /* DARK BLUE */
+    color: #ffffff; /* White text */
     padding: 25px;
     border-radius: 18px;
-    box-shadow: 0 4px 18px rgba(0, 60, 140, 0.15);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
     transition: 0.4s ease;
     transform: scale(0.95);
     opacity: 0;
+}
+
+.quiz-card h2,
+.quiz-card p,
+.quiz-card label {
+    color: #ffffff;
 }
 
 .quiz-card.show {
