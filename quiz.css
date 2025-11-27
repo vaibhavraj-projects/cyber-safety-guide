@@ -1,31 +1,74 @@
-/* ------------------------------------------------
-   GLOBAL RESET + FONTS + BACKGROUND
---------------------------------------------------*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* QUIZ PAGE ONLY — SAFE STYLES */
+
+/* Wrapper so the quiz has its own centered dark card */
+.quiz-wrapper {
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 25px;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #1a1a1a;
-    line-height: 1.6;
-
-    /* SAME GRADIENT AS HOME PAGE */
-    background: linear-gradient(
-        135deg,
-        #eaf3ff 0%,
-        #c7dbff 35%,
-        #a7c4ff 70%,
-        #d7e7ff 100%
-    );
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+/* Dark quiz card */
+.quiz-card {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
 }
 
-/* Secondary heading font */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', sans-serif;
+/* Question text */
+.quiz-question {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Answer buttons */
+.quiz-option {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    background: #2a2a2a;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 10px;
+    margin: 8px 0;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.quiz-option:hover {
+    background: #333333;
+}
+
+.quiz-option.correct {
+    background: #2ecc71;
+}
+
+.quiz-option.wrong {
+    background: #e74c3c;
+}
+
+/* Next button */
+.next-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #4a90e2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.next-btn:hover {
+    background: #357abd;
+}
+
+/* Result section */
+.quiz-result {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 20px;
 }
