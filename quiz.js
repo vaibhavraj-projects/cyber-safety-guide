@@ -1,155 +1,138 @@
-const card = document.getElementById("quiz-card");
-let index = 0;
-let score = 0;
-
-const quiz = [
-    {
-        type: "info",
-        title: "🧠 Cyber Safety Awareness Mini-Quiz",
-        text: `Instructions:<br><br>
-        • Choose the correct option for each question.<br>
-        • Each correct answer = 1 point.<br><br>
-        Click “Let's Go!” to begin.`,
-        button: "Let's Go!"
-    },
-    {
-        type: "mcq",
-        title: "Which of these is a sign of a phishing attempt?",
-        options: [
-            "An email asking for your password",
-            "A message from a friend you usually talk to",
-            "A verified website login"
-        ],
-        answer: 0
-    },
-    {
-        type: "mcq",
-        title: "Which password is the safest?",
-        options: [
-            "123456",
-            "mycat123",
-            "L8@nF#92qP!"
-        ],
-        answer: 2
-    },
-    {
-        type: "mcq",
-        title: "What does malware do?",
-        options: [
-            "Protects your device",
-            "Slows or damages your device",
-            "Improves WiFi speed"
-        ],
-        answer: 1
-    },
-    {
-        type: "mcq",
-        title: "What should you AVOID doing on public Wi-Fi?",
-        options: [
-            "Watching YouTube",
-            "Checking social media",
-            "Accessing your bank account"
-        ],
-        answer: 2
-    },
-    {
-        type: "tf",
-        title: "Cyberbullying is a serious online safety threat.",
-        options: ["True", "False"],
-        answer: 0
-    },
-    {
-        type: "tf",
-        title: "Reusing the same password increases your risk during data breaches.",
-        options: ["True", "False"],
-        answer: 0
-    },
-    {
-        type: "mcq",
-        title: "Which website looks suspicious?",
-        img: "fakeweb.png", 
-        options: [
-            "https://real-bank.com",
-            "http://secure-bank-login.cc",
-            "https://bankofindia.co.in"
-        ],
-        answer: 1
-    },
-    {
-        type: "tf",
-        title: "Scanning unknown QR codes is safe.",
-        options: ["True", "False"],
-        answer: 1
-    }
+const questions = [
+  {
+    type: "MCQ",
+    q: "Which message is MOST likely a phishing attempt?",
+    options: [
+      "Your bank contacts you through the official app",
+      "An email saying you won a prize + asks to click a strange link",
+      "Your teacher sends homework on the school platform"
+    ],
+    answer: 1
+  },
+  {
+    type: "MCQ",
+    q: "Which is a strong password?",
+    options: [
+      "123456",
+      "mypassword",
+      "Frog!72Sky*9"
+    ],
+    answer: 2
+  },
+  {
+    type: "MCQ",
+    q: "What can malware do?",
+    options: [
+      "Protect your device",
+      "Slow devices and steal data",
+      "Make internet faster"
+    ],
+    answer: 1
+  },
+  {
+    type: "MCQ",
+    q: "What should you NOT do on public Wi-Fi?",
+    options: [
+      "Watch videos",
+      "Do online school work",
+      "Log in to bank / enter personal details"
+    ],
+    answer: 2
+  },
+  {
+    type: "TF",
+    q: "Cyberbullying is never okay.",
+    options: ["True", "False"],
+    answer: 0
+  },
+  {
+    type: "TF",
+    q: "Reusing the same password everywhere is safe.",
+    options: ["True", "False"],
+    answer: 1
+  },
+  {
+    type: "MCQ",
+    q: "Which website is safest?",
+    options: [
+      "http://freestuff.com",
+      "https://school.edu",
+      "A site with misspelled URL"
+    ],
+    answer: 1
+  },
+  {
+    type: "TF",
+    q: "Scanning unknown QR codes is always safe.",
+    options: ["True", "False"],
+    answer: 1
+  }
 ];
 
-function loadCard() {
-    card.classList.remove("show");
+let score = 0;
+let current = 0;
 
-    setTimeout(() => {
-        let q = quiz[index];
+const card = document.getElementById("card");
+const instructions = document.getElementById("instructions");
 
-        if (q.type === "info") {
-            card.innerHTML = `
-                <h2 class="quiz-title">${q.title}</h2>
-                <p>${q.text}</p>
-                <button class="action-btn" onclick="nextCard()">${q.button}</button>
-            `;
-        }
+const questionText = document.getElementById("question-text");
+const optionsDiv = document.getElementById("options");
+const feedback = document.getElementById("feedback");
 
-        else {
-            let html = `
-            <h2 class="quiz-title">${q.title}</h2>
-            ${q.img ? `<img src="${q.img}" class="quiz-img">` : ""}
-            `;
+document.getElementById("startBtn").onclick = () => {
+  instructions.style.display = "none";
+  card.classList.remove("hidden");
+  loadQuestion();
+};
 
-            q.options.forEach((op, i) => {
-                html += `<button class="option-btn" onclick="selectOption(${i})">${op}</button>`;
-            });
+function loadQuestion() {
+  card.classList.remove("flip");
+  const q = questions[current];
 
-            html += `
-            <div class="card-buttons">
-                <button class="action-btn" onclick="skip()">Skip</button>
-                <button class="action-btn" onclick="nextCard()">Submit</button>
-            </div>`;
+  questionText.textContent = q.q;
+  optionsDiv.innerHTML = "";
 
-            card.innerHTML = html;
-        }
-
-        card.classList.add("show");
-    }, 250);
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement("button");
+    btn.textContent = opt;
+    btn.onclick = () => checkAnswer(idx);
+    optionsDiv.appendChild(btn);
+  });
 }
 
-function selectOption(i) {
-    let q = quiz[index];
-    if (i === q.answer) score++;
-    nextCard();
+function checkAnswer(choice) {
+  const q = questions[current];
+  feedback.textContent = choice === q.answer ? "Correct! 🎉" : "Oops! ❌";
+  if (choice === q.answer) score++;
+
+  card.classList.add("flip");
 }
 
-function skip() {
-    nextCard();
+document.getElementById("skipBtn").onclick = () => {
+  next();
+};
+
+document.getElementById("submitBtn").onclick = () => {
+  // Do nothing—buttons handled by option click
+};
+
+document.getElementById("nextBtn").onclick = next;
+
+function next() {
+  current++;
+  if (current >= questions.length) {
+    endQuiz();
+  } else {
+    loadQuestion();
+  }
 }
 
-function nextCard() {
-    index++;
-
-    if (index >= quiz.length) {
-        showScore();
-        return;
-    }
-
-    loadCard();
+function endQuiz() {
+  card.classList.add("flip");
+  feedback.innerHTML = `You scored <b>${score}/${questions.length}</b> 🎉<br><br>
+    Cyber Awareness Level:<br>
+    ${score >= 7 ? "🟢 Cyber Star!" :
+      score >= 4 ? "🟡 Getting There!" :
+                   "🔴 Needs Practice!"}`;
+  document.getElementById("nextBtn").style.display = "none";
 }
-
-function showScore() {
-    card.innerHTML = `
-        <h2 class="quiz-title">🎉 Quiz Complete!</h2>
-        <div class="score-box">Your Score: ${score} / 8</div>
-        <p>${score <= 3 ? "Keep learning — you're improving! 💡" :
-           score <= 6 ? "Great job! You know your cyber basics. 🔐" :
-           "Cyber Safety Pro! You're hard to trick. 🛡️"}</p>
-    `;
-    card.classList.add("show");
-}
-
-loadCard();
