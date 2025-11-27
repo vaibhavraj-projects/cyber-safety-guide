@@ -243,7 +243,6 @@ footer {
 .webtionary li strong {
     color: #0a367a;
 }
-
 /* -------------------------------------------
    THREATS PAGE
 -------------------------------------------*/
@@ -299,8 +298,4 @@ footer {
 .avoid {
     font-size: 0.95rem;
     color: #0a367a;
-}
-
-    font-size: 0.9rem;
-    font-weight: 600;
 }
