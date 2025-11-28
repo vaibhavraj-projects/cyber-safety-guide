@@ -1,102 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ - Cyber Safety Guide</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Cyber Safety Guide</title>
 
-    <!-- Global styles -->
-    <link rel="stylesheet" href="global.css" />
+  <!-- FONT + ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- FAQ styles -->
-    <link rel="stylesheet" href="faq.css" />
+  <!-- GLOBAL SITE STYLES -->
+  <link rel="stylesheet" href="global.css">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- FAQ PAGE-SPECIFIC STYLES -->
+  <style>
+    .faq-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .faq-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #0d47a1;
+      margin-bottom: 25px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 12px rgba(0, 40, 100, 0.18);
+      transition: 0.3s ease;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #0d47a1;
+    }
+
+    .faq-question i {
+      transition: 0.3s;
+    }
+
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, margin-top 0.3s ease;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: #333;
+      margin-top: 0;
+    }
+
+    .faq-answer.open {
+      max-height: 400px;
+      margin-top: 12px;
+    }
+  </style>
+
 </head>
-
 <body>
 
-    <!-- NAV BAR -->
-    <nav class="glass-nav">
-        <div class="nav-left">
-            Hi, Welcome to your Cyber Safety Guide!
-        </div>
+  <!-- NAVIGATION BAR -->
+  <nav class="glass-nav">
+    <div class="nav-left">
+      Hi, Welcome to your Cyber Safety Guide!
+    </div>
 
-        <div class="nav-right">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="threats.html">Threats</a>
-            <a href="help.html">Help</a>
-            <a href="stats.html">Stats</a>
-            <a href="tools.html">Tools</a>
-            <a href="quiz.html">Quiz</a>
-            <a href="faq.html" class="active">FAQ's</a>
-        </div>
-    </nav>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="threats.html">Threats</a>
+      <a href="help.html">Help</a>
+      <a href="stats.html">Stats</a>
+      <a href="tools.html">Tools</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="faq.html" class="active">FAQ's</a>
+    </div>
+  </nav>
 
-    <!-- FAQ SECTION -->
-    <main class="faq-wrapper">
+  <!-- FAQ CONTENT -->
+  <main class="faq-container">
+    <h1 class="faq-title">Frequently Asked Questions</h1>
 
-        <h1 class="faq-title">Frequently Asked Questions</h1>
+    <!-- FAQ 1 -->
+    <div class="faq-item">
+      <button class="faq-question">What is cyber safety? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-answer">Cyber safety means protecting yourself online by using secure passwords, avoiding scams, and keeping your information private.</div>
+    </div>
 
-        <div class="faq-container">
+    <!-- FAQ 2 -->
+    <div class="faq-item">
+      <button class="faq-question">How can I create a strong password? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-answer">Use at least 10–12 characters, mix letters, numbers, symbols, and avoid personal details like your name or birthday.</div>
+    </div>
 
-            <!-- FAQ ITEM 1 -->
-            <div class="faq-item">
-                <button class="faq-question">
-                    Placeholder Question 1?
-                    <span class="arrow">▼</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Placeholder answer text for this question. Replace this with your real answer.</p>
-                </div>
-            </div>
+    <!-- FAQ 3 -->
+    <div class="faq-item">
+      <button class="faq-question">What should I do if I receive a suspicious email? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-answer">Do NOT click links or download attachments. Verify the sender or delete it immediately.</div>
+    </div>
 
-            <!-- FAQ ITEM 2 -->
-            <div class="faq-item">
-                <button class="faq-question">
-                    Placeholder Question 2?
-                    <span class="arrow">▼</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Placeholder answer text for this question. Replace this with your real answer.</p>
-                </div>
-            </div>
+    <!-- FAQ 4 -->
+    <div class="faq-item">
+      <button class="faq-question">Is it safe to use public Wi-Fi? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-answer">Only for browsing general sites. Avoid logging in, accessing banking, or sharing any personal info on public Wi-Fi.</div>
+    </div>
 
-            <!-- FAQ ITEM 3 -->
-            <div class="faq-item">
-                <button class="faq-question">
-                    Placeholder Question 3?
-                    <span class="arrow">▼</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Placeholder answer text for this question. Replace this with your real answer.</p>
-                </div>
-            </div>
+    <!-- FAQ 5 -->
+    <div class="faq-item">
+      <button class="faq-question">What is phishing? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-answer">Phishing is when attackers pretend to be real companies to trick you into giving passwords or personal info.</div>
+    </div>
 
-            <!-- Add more FAQ items as needed -->
-        </div>
-    </main>
+    <!-- FAQ 6 -->
+    <div class="faq-item">
+      <button class="faq-question">How can I identify a fake website? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-answer">Check the URL, look for spelling errors, avoid sites with strange domains, and ensure the site uses HTTPS.</div>
+    </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p class="footer-quote">"Stay Safe. Stay Secure. Stay Smart."</p>
-        <p class="footer-credit">© 2025 Cyber Safety Guide</p>
-    </footer>
+    <!-- FAQ 7 -->
+    <div class="faq-item">
+      <button class="faq-question">Should I use the same password everywhere? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-answer">No. Using the same password increases risk. If one account is hacked, ALL become vulnerable.</div>
+    </div>
 
-    <!-- FAQ JS (built-in, no separate file needed) -->
-    <script>
-        const buttons = document.querySelectorAll(".faq-question");
+    <!-- FAQ 8 -->
+    <div class="faq-item">
+      <button class="faq-question">How often should I update my passwords? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-answer">Every 3–6 months, or immediately if you suspect suspicious activity.</div>
+    </div>
 
-        buttons.forEach(btn => {
-            btn.addEventListener("click", () => {
-                const answer = btn.nextElementSibling;
-                answer.classList.toggle("open");
-                btn.classList.toggle("active");
-            });
-        });
-    </script>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-quote">"stay safe and keep learning!"</p>
+    <p class="footer-credit">Credit — Vaibhav Raj & Samar Pratap Singh | Class IX | Sunbeam School Babatpur</p>
+  </footer>
+
+  <!-- FAQ TOGGLE SCRIPT -->
+  <script>
+    document.querySelectorAll(".faq-question").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        const answer = btn.nextElementSibling;
+        answer.classList.toggle("open");
+      });
+    });
+  </script>
 
 </body>
 </html>
