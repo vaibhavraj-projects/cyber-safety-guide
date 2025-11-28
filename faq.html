@@ -1,54 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Cyber Safety - FAQ</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Cyber Safety Guide</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="global.css" />
+
+    <!-- FAQ styles -->
+    <link rel="stylesheet" href="faq.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="threats.html">Threats</a>
-        <a href="help.html">Help</a>
-        <a href="stats.html">Stats</a>
-        <a href="tools.html">Tools</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="faq.html">FAQ</a>
+
+    <!-- NAV BAR -->
+    <nav class="glass-nav">
+        <div class="nav-left">
+            Hi, Welcome to your Cyber Safety Guide!
+        </div>
+
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="threats.html">Threats</a>
+            <a href="help.html">Help</a>
+            <a href="stats.html">Stats</a>
+            <a href="tools.html">Tools</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="faq.html" class="active">FAQ's</a>
+        </div>
     </nav>
 
-    <h1>Frequently Asked Questions</h1>
+    <!-- FAQ SECTION -->
+    <main class="faq-wrapper">
 
-    <details>
-        <summary>What is cyber security?</summary>
-        <p>Cyber security is protecting devices, networks, and data from digital attacks.</p>
-    </details>
+        <h1 class="faq-title">Frequently Asked Questions</h1>
 
-    <details>
-        <summary>How can I report cybercrime in India?</summary>
-        <p>Use the National Cyber Crime Reporting Portal at <a href="https://cybercrime.gov.in/">cybercrime.gov.in</a> or call 155260.</p>
-    </details>
+        <div class="faq-container">
 
-    <details>
-        <summary>How do I make my passwords strong?</summary>
-        <p>Use long, unique combinations of letters, numbers, and symbols.</p>
-    </details>
+            <!-- FAQ ITEM 1 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Placeholder Question 1?
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Placeholder answer text for this question. Replace this with your real answer.</p>
+                </div>
+            </div>
 
-    <details>
-        <summary>What is phishing?</summary>
-        <p>Phishing is when attackers trick you into giving personal info via fake emails/messages.</p>
-    </details>
+            <!-- FAQ ITEM 2 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Placeholder Question 2?
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Placeholder answer text for this question. Replace this with your real answer.</p>
+                </div>
+            </div>
 
-    <details>
-        <summary>What is 2FA?</summary>
-        <p>Two-Factor Authentication adds an extra layer of security using a code or app.</p>
-    </details>
+            <!-- FAQ ITEM 3 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Placeholder Question 3?
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Placeholder answer text for this question. Replace this with your real answer.</p>
+                </div>
+            </div>
 
-     <!-- FOOTER -->
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <p class="footer-quote">"stay safe and keep learning!"</p>
-        <p class="footer-credit">Credit — Vaibhav Raj & Samar Pratap Singh | Class IX | Sunbeam School Babatpur</p>
+        <p class="footer-quote">"Stay Safe. Stay Secure. Stay Smart."</p>
+        <p class="footer-credit">© 2025 Cyber Safety Guide</p>
     </footer>
+
+    <!-- FAQ JS (built-in, no separate file needed) -->
+    <script>
+        const buttons = document.querySelectorAll(".faq-question");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const answer = btn.nextElementSibling;
+                answer.classList.toggle("open");
+                btn.classList.toggle("active");
+            });
+        });
+    </script>
 
 </body>
 </html>
