@@ -462,3 +462,83 @@ footer {
     margin: 0 auto;
     line-height: 1.6;
 }
+
+/* ------------------------------------------------
+   (your existing global CSS)
+--------------------------------------------------*/
+
+/* ------------------------------------------------
+   FAQ PAGE STYLES (pasted at the very bottom)
+--------------------------------------------------*/
+.faq-wrapper {
+    max-width: 850px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #0d47a1;
+    margin-bottom: 30px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 18px 22px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #0d47a1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question:hover {
+    background: rgba(230, 242, 255, 0.6);
+}
+
+.faq-question .arrow {
+    transition: 0.3s ease;
+}
+
+.faq-question.active .arrow {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    height: 0;
+    overflow: hidden;
+    background: #f7faff;
+    padding: 0 22px;
+    transition: height 0.35s ease, padding 0.3s ease;
+}
+
+.faq-answer.open {
+    height: auto;
+    padding: 18px 22px 20px;
+}
+
+.faq-answer p {
+    color: #1a1a1a;
+    line-height: 1.55;
+}
